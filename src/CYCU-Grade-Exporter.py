@@ -14,14 +14,14 @@ size = str(sizex) + 'x' + str(sizey)
 color = '#002EA4'
 description_text = [
     'ATTENSION: ',
-    'This program is only for the students of Chung Yuan Christian University to extract your grade from I-touch. \n\
-If you use this program to extract grade from other website or grade of other students, you will be responsible for the consequence.',
+    'This program is only for the students of Chung Yuan Christian University to extract grades from I-touch. \n\
+If you use this program to extract grades from other websites or grades of other students, you will be responsible for the consequence.',
     'How To Use: ',
-    '1. Use webbrowser like Google or Firefox to open up i-touch website and sign-in. \n\
-2. Go to \'學業/學習足跡/歷年學習成績/新視窗開啟\', and focus on the new opened tab. \n\
+    '1. Click the button \'I-touch\' to open up an i-touch website and sign in. \n\
+2. Go to \'學業/學習足跡/歷年學習成績/新視窗開啟\', and focus on the newly opened tab. \n\
 3. Use hotkey \'ctrl+u\' to open source code of the tab, and use \'ctrl+c\' to copy all codes. \n\
-4. Paste the codes using \'ctrl+v\' into the text box and select exportint format. \n\
-5. Select file type and extract directory. \n\
+4. Paste the codes using \'ctrl+v\' into the text box and select exporting format. \n\
+5. Select the file type and extract directory. \n\
 6. Click \'Extract\'.',
 ]
 i_touch_link = 'https://itouch.cycu.edu.tw/home/#/ann'
