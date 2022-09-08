@@ -1,5 +1,7 @@
 # CYCU-Grade-Exporter
 
+<https://img.shields.io/github/v/release/belongtothenight/CYCU-Grade-Exporter>
+
 This script takes webpage source code and exports a CSV file containing CYCU students' grade-related data.
 
 ## ATTENTION
@@ -32,7 +34,7 @@ Windows defender will try to stop you from executing this program, but no malici
 2. Go to '學業/學習足跡/歷年學習成績/新視窗開啟(右上角灰+白的圓形按鈕)', and focus on the newly opened tab.
 3. Use hotkey 'ctrl+u' to open the source code of the tab, and use 'ctrl+c' to copy all codes.
 4. Paste the code using 'ctrl+v' into the text box and select exporting format (CSV suggested).
-5. Select the file type and extract directory.
+5. Select the file type and extract the directory.
 6. Click 'Extract'.
 Once the button 'Extract' is clicked and successfully exported the file, a windows file browser window should pop up showing the exported file and open the file with default software. If not, please check if all the code on the webpage is pasted.
 
