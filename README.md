@@ -19,11 +19,11 @@ Also, the auto generated G.P.A score only calculate the courses you've passed.
 Go to [relase page](https://github.com/belongtothenight/CYCU-Grade-Exporter/releases/tag/V1.0.2) and download installer.</br>
 For installation destination, it is recommended to install in folders that doesn't need admistrator permisson. If you want to install in those folders, you'll need to execute it with admistrator permisson everytime you want to use it.
 
-| Virus Detection | Picture                            |
-| --------------- | ---------------------------------- |
-| v1.0.1          | ![Test 1](picture/virustotal1.png) |
-| v1.0.1          | ![Test 2](picture/virustotal2.png) |
-| v1.0.2          | ![Test 3](picture/virustotal3.png) |
+| Virus Detection | Score | Picture                                                                                            |
+| --------------- | ----- | -------------------------------------------------------------------------------------------------- |
+| v1.0.1          | 5/67  | [Test 1](https://github.com/belongtothenightCYCU-Grade-Exporter/blob/main/picture/virustotal1.png) |
+| v1.0.1          | 5/67  | [Test 2](https://github.com/belongtothenightCYCU-Grade-Exporter/blob/main/picture/virustotal2.png) |
+| v1.0.2          | 5/67  | [Test 3](https://github.com/belongtothenightCYCU-Grade-Exporter/blob/main/picture/virustotal3.png) |
 
 ## Steps to Use
 
