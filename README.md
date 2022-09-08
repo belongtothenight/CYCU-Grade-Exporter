@@ -19,6 +19,7 @@ Also, the auto generated G.P.A score only calculate the courses you've passed.
 Go to [relase page](https://github.com/belongtothenight/CYCU-Grade-Exporter/releases/tag/V1.0.2) and download installer.</br>
 For installation destination, it is recommended to install in folders that doesn't need admistrator permisson. If you want to install in those folders, you'll need to execute it with admistrator permisson everytime you want to use it.
 
+No malicious code is contained, it is safe to use despite Windows might give warning. The table below is the test result from [VirusTotal](https://www.virustotal.com/gui/home/upload).
 | Virus Detection | Score | Picture                                                                                            |
 | --------------- | ----- | -------------------------------------------------------------------------------------------------- |
 | v1.0.1          | 5/67  | [Test 1](https://github.com/belongtothenightCYCU-Grade-Exporter/blob/main/picture/virustotal1.png) |
