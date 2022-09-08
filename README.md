@@ -1,6 +1,6 @@
 # CYCU-Grade-Exporter
 
-<https://img.shields.io/github/v/release/belongtothenight/CYCU-Grade-Exporter>
+[![Version](https://img.shields.io/github/v/release/belongtothenight/CYCU-Grade-Exporter)](https://img.shields.io/github/v/release/belongtothenight/CYCU-Grade-Exporter) [![Code Check](https://img.shields.io/github/workflow/status/belongtothenight/CYCU-Grade-Exporter/CodeQL)](https://img.shields.io/github/workflow/status/belongtothenight/CYCU-Grade-Exporter/CodeQL)
 
 This script takes webpage source code and exports a CSV file containing CYCU students' grade-related data.
 
@@ -21,7 +21,7 @@ Also, the auto-generated G.P.A score only calculates the courses you've passed.
 Go to [relase page](https://github.com/belongtothenight/CYCU-Grade-Exporter/releases) and download the latest installer.</br>
 For installation destination, it is recommended to install in folders that don't need administrator permission. Suppose you want to install it in those folders. In that case, you'll need to execute it with administrator permission every time you want to use it.
 
-Windows defender will try to stop you from executing this program, but no malicious code is contained, and it is safe to use despite Windows might give warnings. The table below is the test result from [VirusTotal](https://www.virustotal.com/gui/home/upload). Thus it's safe to click 'More Info' and 'run anyway' to install.
+Windows defender will try to stop you from executing this program, but no malicious code is contained, and it is safe to use despite Windows might give warnings. The table below is the test result from [VirusTotal](https://www.virustotal.com/gui/home/upload) which shows few alerts, and the source code itself had passed CodeQL scans. Thus it's safe to click 'More Info' and 'run anyway' to install.
 | Virus Detection | Score | Picture                                                                                            |
 | --------------- | ----- | -------------------------------------------------------------------------------------------------- |
 | v1.0.1          | 5/67  | [Test 1](https://github.com/belongtothenightCYCU-Grade-Exporter/blob/main/picture/virustotal1.png) |
