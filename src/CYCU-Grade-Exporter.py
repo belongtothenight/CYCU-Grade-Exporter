@@ -1,14 +1,35 @@
+from tkinter.filedialog import askdirectory
 from bs4 import BeautifulSoup
-from os import system
+from os import system, startfile, remove, getcwd
+from os.path import join, exists
+from csv import writer
+from webbrowser import open as open_url
 import numpy as np
-import csv
-pathA = 'D:/Note_Database/School/Master/Consolation/Grab grade from text/https __itouch.cycu.edu.tw_active_system_quary_s_grade.jsp'
-pathB = 'D:/Note_Database/School/Master/Consolation/Grab grade from text/'
+import tkinter as tk
+from tkinter import ttk
+
+sizex = 960
+sizey = 540
+size = str(sizex) + 'x' + str(sizey)
+color = '#002EA4'
+description_text = [
+    'ATTENSION: ',
+    'This program is only for the students of Chung Yuan Christian University to extract your grade from I-touch. \n\
+If you use this program to extract grade from other website or grade of other students, you will be responsible for the consequence.',
+    'How To Use: ',
+    '1. Use webbrowser like Google or Firefox to open up i-touch website and sign-in. \n\
+2. Go to \'學業/學習足跡/歷年學習成績/新視窗開啟\', and focus on the new opened tab. \n\
+3. Use hotkey \'ctrl+u\' to open source code of the tab, and use \'ctrl+c\' to copy all codes. \n\
+4. Paste the codes using \'ctrl+v\' into the text box and select exportint format. \n\
+5. Select file type and extract directory. \n\
+6. Click \'Extract\'.',
+]
+i_touch_link = 'https://itouch.cycu.edu.tw/home/#/ann'
 
 
-class wp:
+class WP:
     def __init__(self, path):
-        with open(path, 'rb') as f:
+        with open(path, 'r', encoding='utf-8') as f:
             self.doc = BeautifulSoup(f, 'html.parser')
 
     def str_purify(self, string):
@@ -23,6 +44,7 @@ class wp:
         doc_identity = doc_identity.split(' ')
         doc_identity = list(filter(None, doc_identity))
         doc_identity = doc_identity[2:-1]
+        doc_identity = list(filter(None, doc_identity))
         doc_identity = [x.strip() for x in doc_identity]
         return doc_identity
 
@@ -116,9 +138,12 @@ class wp:
             print(list)
 
 
-class wpp(wp):
-    def __init__(self, pathA, pathB, csv_mode):
-        sg = wp(pathA)
+class WPP(WP):
+    def __init__(self, pathA, pathB, output_mode):
+        self.pathA = pathA
+        self.pathB = pathB
+        self.output_mode = output_mode
+        sg = WP(self.pathA)
         self.identity = sg.find_identity()
         self.exemption = sg.find_exemption()
         self.grade = sg.find_grade()
@@ -252,42 +277,142 @@ class wpp(wp):
         self.gpa.append(cross_buf1 / credit_buf1)
         # print(rng)
         '''export'''
-        if csv_mode == 0:
+        self.grade[0].append('Total')
+        self.semester.append('Total')
+        self.identity = list(filter(None, self.identity))
+        export_data_a = []
+        export_data_b = []
+        i = 0
+        buf = []
+        for x in range(0, len(self.semester[1])):
+            buf.append(
+                self.exemption[2][i:i+len(self.exemption[1])])
+            i += len(self.exemption[1])
+        export_data_a.append(self.identity)
+        export_data_a.append([self.exemption[0]])
+        export_data_a.append(self.exemption[1])
+        for x in buf:
+            export_data_a.append(x)
+        export_data_a.append(self.grade[1])
+        for x in self.grade[2]:
+            export_data_a.append(x)
+        export_data_a.append(self.grade[0])
+        export_data_a.append(self.semester)
+        export_data_a.append(self.credit)
+        export_data_a.append(self.gpa)
+        print(export_data_a)
+        if self.output_mode == 1:
+            # export csv
+            print('exporting csv...')
+            path_csv = self.pathB + \
+                self.identity[1] + '_' + self.identity[-2] + '.csv'
+            with open(path_csv, 'w', encoding='utf-8', newline='') as f:
+                w = writer(f)
+                for element in export_data_a:
+                    w.writerow(element)
+            print('Exported to ' + self.pathB)
+        elif self.output_mode == 2:
+            # export txt
+            print('exporting txt...')
+            path_txt = self.pathB + \
+                self.identity[1] + '_' + self.identity[-2] + '.txt'
+            with open(path_txt, 'w', encoding='utf-8') as f:
+                for element in export_data_a:
+                    f.write(str(element) + '\n')
+            print('Exported to ' + self.pathB)
+        else:
             print('Nothing is exported.')
-        elif csv_mode == 1:
-            pathB = pathB + self.identity[1] + '_' + self.identity[2] + '.csv'
-            with open(pathB, 'w', encoding='utf-8', newline='') as f:
-                writer = csv.writer(f)
-                writer.writerow(self.identity)
-                writer.writerow('\n')
-                writer.writerow([self.exemption[0]])
-                writer.writerow('\n')
-                writer.writerow(self.exemption[1])
-                i = 0
-                for x in range(0, len(self.semester[1])):
-                    writer.writerow(
-                        self.exemption[2][i:i+len(self.exemption[1])])
-                    i += len(self.exemption[1])
-                writer.writerow('\n')
-                writer.writerow(self.grade[0])
-                writer.writerow('\n')
-                writer.writerow(self.grade[1])
-                for x in self.grade[2]:
-                    writer.writerow(x)
-                writer.writerow('\n')
-                for x in self.semester:
-                    writer.writerow([x])
-                writer.writerow('\n')
-                for x in self.credit:
-                    writer.writerow([x])
-                writer.writerow('\n')
-                for x in self.gpa:
-                    writer.writerow([x])
-            print('Exported to ' + pathB)
-        elif csv_mode == 2:
-            print('Exported to ' + pathB)
+
+
+class Window(tk.Tk, WPP):
+    def __init__(self, size, sizex, sizey, color):
+        self.size = size
+        self.color = color
+        tk.Tk.__init__(self)
+        self.title('CYCU Grade Exporter')
+        self.geometry(self.size)
+        self.configure(bg=self.color)
+        self.resizable(False, False)
+        self.dst = tk.StringVar()
+        self.source_code = tk.StringVar()
+        self.canvas = tk.Canvas(
+            self, width=sizex, height=sizey, bg=self.color, highlightthickness=0)
+        self.canvas.pack()
+        self.canvas.create_text(
+            sizex/2, 40, text='CYCU Grade Exporter', font=('Arial', 30), fill='white')
+        self.description = tk.Label(self, text=description_text[0], font=(
+            'Arial', 17), bg=self.color, fg='white', anchor='center', justify='left')
+        self.description.place(x=sizex/2-390, y=60)
+        self.description = tk.Label(self, text=description_text[1], font=(
+            'Consolas', 12), bg=self.color, fg='white', anchor='center', justify='left', wraplength=sizex*0.9)
+        self.description.place(x=sizex/2-420, y=90)
+        self.description = tk.Label(self, text=description_text[2], font=(
+            'Arial', 17), bg=self.color, fg='white', anchor='center', justify='left')
+        self.description.place(x=sizex/2-390, y=190)
+        self.description = tk.Label(self, text=description_text[3], font=(
+            'Consolas', 12), bg=self.color, fg='white', anchor='center', justify='left', wraplength=sizex*0.9)
+        self.description.place(x=sizex/2-420, y=230)
+        self.canvas.create_text(
+            sizex/2-380, 380, text='Export Folder', font=('Consolas', 14), fill='white', justify='left')
+        self.dst_path = tk.Entry(self, width=60, font=(
+            'Consolas', 14), textvariable=self.dst)
+        self.dst_path.place(x=sizex/2-300, y=380, anchor='w')
+        self.browse = tk.Button(self, text='Browse', font=(
+            'Consolas', 14), command=self.find_dst)
+        self.browse.place(x=sizex/2+400, y=380, anchor='e')
+        self.canvas.create_text(
+            sizex/2-380, 420, text='Source Code', font=('Consolas', 14), fill='white', justify='right')
+        self.code = tk.Entry(self, width=50, font=(
+            'Consolas', 14), textvariable=self.source_code)
+        self.code.place(x=sizex/2-300, y=420, anchor='w')
+        self.filetype = ttk.Combobox(self, width=5, font=('Consolas', 14))
+        self.filetype['values'] = ('.csv', '.txt')
+        self.filetype.place(x=sizex/2+300, y=420, anchor='e')
+        self.i_touch = tk.Button(self, text='I-touch', font=(
+            'Consolas', 12), command=self.openwp)
+        self.i_touch.place(x=sizex/2+400, y=420, anchor='e')
+        self.extract = tk.Button(self, text='Extract', font=(
+            'Consolas', 17), command=self.extract_data)
+        self.extract.place(x=sizex/2, y=490, anchor='center')
+        self.focus_force()
+        self.mainloop()
+
+    def find_dst(self):
+        self.dst.set(tk.filedialog.askdirectory(initialdir=getcwd()))
+        print(self.dst.get())
+
+    def openwp(self):
+        open_url(i_touch_link)
+
+    def extract_data(self):
+        try:
+            self.source_code = self.code.get()
+            self.dst = self.dst_path.get()
+            if not exists(self.dst):
+                return
+            if str(self.source_code) == '':
+                return
+            filename = 'source_code_buffer'
+            with open(join(self.dst, filename + '.txt'), 'w', encoding='utf-8') as f:
+                f.write(self.source_code)
+            print('Source code is saved to ' +
+                  join(self.dst, filename + '.txt'))
+            mode = self.filetype.get()
+            # print(mode)
+            if mode == '.csv':
+                WPP(join(self.dst, filename + '.txt'),
+                    join(self.dst, ''), 1)
+            elif mode == '.txt':
+                WPP(join(self.dst, filename + '.txt'),
+                    join(self.dst, ''), 2)
+            else:
+                print('Please select a file type.')
+            remove(join(self.dst, filename + '.txt'))
+            startfile(self.dst)
+        except:
+            pass
 
 
 if __name__ == '__main__':
     system('cls')
-    s = wpp(pathA, pathB, 1)
+    main_window = Window(size, sizex, sizey, color)
