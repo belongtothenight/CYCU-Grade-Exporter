@@ -300,17 +300,19 @@ class WPP(WP):
         export_data_a.append(self.semester)
         export_data_a.append(self.credit)
         export_data_a.append(self.gpa)
-        print(export_data_a)
+        # print(export_data_a)
         if self.output_mode == 1:
             # export csv
             print('exporting csv...')
             path_csv = self.pathB + \
                 self.identity[1] + '_' + self.identity[-2] + '.csv'
-            with open(path_csv, 'w', encoding='utf-8', newline='') as f:
+            with open(path_csv, 'w+', encoding='utf-8-sig', newline='') as f:
                 w = writer(f)
                 for element in export_data_a:
                     w.writerow(element)
             print('Exported to ' + self.pathB)
+            startfile(self.pathB)
+            startfile(path_csv)
         elif self.output_mode == 2:
             # export txt
             print('exporting txt...')
@@ -320,6 +322,8 @@ class WPP(WP):
                 for element in export_data_a:
                     f.write(str(element) + '\n')
             print('Exported to ' + self.pathB)
+            startfile(self.pathB)
+            startfile(path_txt)
         else:
             print('Nothing is exported.')
 
@@ -408,7 +412,6 @@ class Window(tk.Tk, WPP):
             else:
                 print('Please select a file type.')
             remove(join(self.dst, filename + '.txt'))
-            startfile(self.dst)
         except:
             pass
 

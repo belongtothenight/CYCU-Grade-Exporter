@@ -5,6 +5,7 @@ This script take webpage source code and spite out csv file containing CYCU stud
 ## ATTENTION
 
 The calculation of G.P.A has not being proven correct yet, so only take it only as a proximate number.
+Also, the auto generated G.P.A score only calculate the courses you've passed.
 
 ## Develop Environment
 
@@ -15,18 +16,24 @@ The calculation of G.P.A has not being proven correct yet, so only take it only 
 
 ## Install
 
-Go to [relase page](https://github.com/belongtothenight/CYCU-Grade-Exporter/releases/tag/V1.0.0) and download EXE file.</br>
-Once it's downloaded, double click to execute it rightaway.
+Go to [relase page](https://github.com/belongtothenight/CYCU-Grade-Exporter/releases/tag/V1.0.2) and download installer.</br>
+For installation destination, it is recommended to install in folders that doesn't need admistrator permisson. If you want to install in those folders, you'll need to execute it with admistrator permisson everytime you want to use it.
+
+| Virus Detection | Picture              |
+| --------------- | -------------------- |
+| v1.0.1          | ![[virustotal1.png]] |
+| v1.0.1          | ![[virustotal2.png]] |
+| v1.0.2          | ![[virustotal3.png]] |
 
 ## Steps to Use
 
 1. Use webbrowser like Google or Firefox to open up i-touch website and sign-in.
 2. Go to '學業/學習足跡/歷年學習成績/新視窗開啟(右上角灰+白的圓形按鈕)', and focus on the new opened tab.
 3. Use hotkey 'ctrl+u' to open source code of the tab, and use 'ctrl+c' to copy all codes.
-4. Paste the code using 'ctrl+v' into the text box and select exportint format.
+4. Paste the code using 'ctrl+v' into the text box and select exportint format (csv suggested).
 5. Select file type and extract directory.
 6. Click 'Extract'.
-Once the button 'Extract' is clicked and successfully exported the file, a windows file browser window should pop up showing the exported file. If not, please check if all the code in the webpage is pasted.
+Once the button 'Extract' is clicked and successfully exported the file, a windows file browser window should pop up showing the exported file and open the file with default software. If not, please check if all the code in the webpage is pasted.
 
 ## Resource
 
