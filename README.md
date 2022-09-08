@@ -21,7 +21,7 @@ Once it's downloaded, double click to execute it rightaway.
 ## Steps to Use
 
 1. Use webbrowser like Google or Firefox to open up i-touch website and sign-in.
-2. Go to '學業/學習足跡/歷年學習成績/新視窗開啟', and focus on the new opened tab.
+2. Go to '學業/學習足跡/歷年學習成績/新視窗開啟(右上角灰+白的圓形按鈕)', and focus on the new opened tab.
 3. Use hotkey 'ctrl+u' to open source code of the tab, and use 'ctrl+c' to copy all codes.
 4. Paste the code using 'ctrl+v' into the text box and select exportint format.
 5. Select file type and extract directory.
