@@ -13,8 +13,8 @@ from pyperclip import copy, paste
 from time import time
 
 system('cls')
-username = ''
-password = ''
+# username = ''
+# password = ''
 
 
 def auto_get_source_code(username, password):
@@ -71,7 +71,7 @@ def auto_get_source_code(username, password):
         WebDriverWait(driver, 3).until(EC.alert_is_present(),
                                        'Timed out waiting for PA creation ' +
                                        'confirmation popup to appear.')
-        return 'login failed, please check your username and password or copy the source code manually'
+        return 'login failed, please retry or copy the source code manually'
     except:
         pass
 
@@ -83,7 +83,7 @@ def auto_get_source_code(username, password):
             break
         except:
             print('login failed')
-            return 'login failed, please check your username and password or copy the source code manually'
+            return 'login failed, please retry or copy the source code manually'
 
     study = driver.find_element(
         By.XPATH, '//*[@id="left-PerfectScrollbar"]/div[3]/ul/li[3]')
@@ -104,16 +104,13 @@ def auto_get_source_code(username, password):
         except:
             print('score_each_year failed')
             pass
-    pag_click(1816, 230)
-    # bugged
-    # open_in_new_window = driver.find_element(
-    # By.LINK_TEXT, '/html/body/div/div[2]/div[2]/div[1]/div/div/div[1]/div[2]/a[1]')
-    # open_in_new_window.click()
-    driver.switch_to.window(driver.window_handles[1])
-    wait = 0.01  # sec
+    wait = 0.1  # sec
+    i = 0
     soup = ''
     while '<html>' not in soup:
-        wait = wait * 2
+        print(i)
+        pag_click(1816, 230)
+        driver.switch_to.window(driver.window_handles[1])
         sleep(wait)
         press_and_release('ctrl+u')
         sleep(wait)
@@ -124,11 +121,13 @@ def auto_get_source_code(username, password):
         soup = paste()
         print('Successful copied.') if '<html>' in soup else print(
             'Falied to copy.')
+        wait = wait * 2
+        i += 1
     driver.quit()
     return soup
 
 
 if __name__ == '__main__':
     print('This is a module, not a script.')
-    soup = auto_get_source_code(username, password)
+    # soup = auto_get_source_code(username, password)
     # print(soup)
