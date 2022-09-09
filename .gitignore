@@ -5,3 +5,4 @@ src/CYCU_Grade_Exporter.spec
 .vs/
 .gitignore
 .gitattributes
+.code-workspace
