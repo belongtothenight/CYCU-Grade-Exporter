@@ -6,20 +6,20 @@ from selenium.webdriver.support import expected_conditions as EC
 from pyautogui import click as pag_click
 from keyboard import press_and_release
 from subprocess import Popen, PIPE
-from os import getcwd, system
+from os import getcwd, system, listdir, walk
 from os.path import join
 from time import sleep
 from pyperclip import copy, paste
 from time import time
 
 system('cls')
+username = ''
+password = ''
 
 
 def auto_get_source_code(username, password):
     url = 'https://itouch.cycu.edu.tw/home/'
     supported_chrome_version = ['104.0.5112', '105.0.5195', '106.0.5249']
-    supported_chrome_version_detail = [
-        '104.0.5112.79', '105.0.5195.52', '106.0.5249.21']
 
     # system('reg query "HKEY_CURRENT_USER\Software\Google\Chrome\BLBeacon" /v version')
 
@@ -29,11 +29,23 @@ def auto_get_source_code(username, password):
     version_info = str(version_info[2])
     version_info = version_info.lstrip(
         'b\'    version    REG_SZ    ').rstrip('\\r\\n\'')[:-4]
+    driver_path = ''
     # print(version_info)
     if version_info in supported_chrome_version:
         index = supported_chrome_version.index(version_info)
-        driver_path = join(
-            getcwd(), 'src/chromedriver_win32/chromedriver {0}.exe'.format(supported_chrome_version_detail[index])).replace('\\', '/')
+        print(index)
+        for root, dirs, files in walk(getcwd()):
+            for file in files:
+                if version_info in file:
+                    print('found chromedriver')
+                    driver_path = join(
+                        root, file).replace('\\', '/')
+                    print(driver_path)
+                else:
+                    print('chromedriver not found')
+        if driver_path == '':
+            print('chromedriver not found')
+            return 'chromedriver not found'
     else:
         print('Unsupported Chrome Version')
         exit()
@@ -118,5 +130,5 @@ def auto_get_source_code(username, password):
 
 if __name__ == '__main__':
     print('This is a module, not a script.')
-    # soup = auto_get_source_code(username, password)
+    soup = auto_get_source_code(username, password)
     # print(soup)
