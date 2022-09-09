@@ -23,9 +23,10 @@ Go to [relase page](https://github.com/belongtothenight/CYCU-Grade-Exporter/rele
 Windows defender will try to stop you from executing this program, but no malicious code is contained, and it is safe to use despite Windows might give warnings. The table below is the test result from [VirusTotal](https://www.virustotal.com/gui/home/upload) which shows few alerts, and the source code itself had passed CodeQL scans. Thus it's safe to click 'More Info' and 'run anyway' to install.
 | Virus Detection | Score | Picture                                                                                            |
 | --------------- | ----- | -------------------------------------------------------------------------------------------------- |
-| v1.0.1          | 5/67  | [Test 1](https://github.com/belongtothenightCYCU-Grade-Exporter/blob/main/picture/virustotal1.png) |
-| v1.0.1          | 5/67  | [Test 2](https://github.com/belongtothenightCYCU-Grade-Exporter/blob/main/picture/virustotal2.png) |
-| v1.0.2          | 5/67  | [Test 3](https://github.com/belongtothenightCYCU-Grade-Exporter/blob/main/picture/virustotal3.png) |
+| v1.0.1          | 5/70  | [Test 1](https://github.com/belongtothenightCYCU-Grade-Exporter/blob/main/picture/virustotal1.png) |
+| v1.0.1          | 5/70  | [Test 2](https://github.com/belongtothenightCYCU-Grade-Exporter/blob/main/picture/virustotal2.png) |
+| v1.0.2          | 5/69  | [Test 3](https://github.com/belongtothenightCYCU-Grade-Exporter/blob/main/picture/virustotal3.png) |
+| v1.1.0          | 4/66  | [Test 4](https://github.com/belongtothenightCYCU-Grade-Exporter/blob/main/picture/virustotal4.png) |
 
 For installation destination, it is recommended to install in folders that don't need administrator permission. Suppose you want to install it in those folders. In that case, you'll need to execute it with administrator permission every time you want to use it.
 
