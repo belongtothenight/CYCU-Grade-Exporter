@@ -31,11 +31,13 @@ For installation destination, it is recommended to install in folders that don't
 
 ## Steps to Use
 
-1. Click the button 'I-touch' to open up an i-touch website and sign in.
-2. Go to '學業/學習足跡/歷年學習成績/新視窗開啟(右上角灰+白的圓形按鈕)', and focus on the newly opened tab.
-3. Use hotkey 'ctrl+u' to open the source code of the tab, and use 'ctrl+c' to copy all codes.
-4. Paste the code using 'ctrl+v' into the text box and select exporting format (CSV suggested).
-5. Select the file type and extract the directory.
+Step 2-5 can be skipped if you press 'Auto'. But you might run into bugs.
+
+1. Select the file type and extract the directory.
+2. Click the button 'I-touch' to open up an i-touch website and sign in.
+3. Go to '學業/學習足跡/歷年學習成績/新視窗開啟(右上角灰+白的圓形按鈕)', and focus on the newly opened tab.
+4. Use hotkey 'ctrl+u' to open the source code of the tab, and use 'ctrl+c' to copy all codes.
+5. Paste the code using 'ctrl+v' into the text box and select exporting format (CSV suggested).
 6. Click 'Extract'.
 Once the button 'Extract' is clicked and successfully exported the file, a windows file browser window should pop up showing the exported file and open the file with default software. If not, please check if all the code on the webpage is pasted.
 
