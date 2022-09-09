@@ -1,7 +1,7 @@
 personal data/
 src/build/
 src/dist/
-src/CYCU-Grade-Exporter.spec
+src/CYCU_Grade_Exporter.spec
 .vs/
 .gitignore
 .gitattributes

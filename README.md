@@ -15,6 +15,8 @@ Also, the auto-generated G.P.A score only calculates the courses you've passed.
 - python
   - numpy
   - bs4
+  - selenium
+  - pyperclip
 
 ## Install
 
