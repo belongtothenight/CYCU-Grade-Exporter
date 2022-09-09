@@ -9,6 +9,14 @@ This script takes webpage source code and exports a CSV file containing CYCU stu
 The calculation of G.P.A has not been proven correct yet, so only take it as a proximate number.
 Also, the auto-generated G.P.A score only calculates the courses you've passed.
 
+Windows defender will try to stop you from executing this program, but no malicious code is contained, and it is safe to use despite Windows might give warnings. The table below is the test result from [VirusTotal](https://www.virustotal.com/gui/home/upload) which shows few alerts, and the source code itself had passed CodeQL scans. Thus it's safe to execute.
+| Release Version | Score |                                                Picture                                                |
+| :-------------: | :---: | :---------------------------------------------------------------------------------------------------: |
+|     v1.0.1      | 5/70  | [Test 1](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal1.png) |
+|     v1.0.1      | 5/70  | [Test 2](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal2.png) |
+|     v1.0.2      | 5/69  | [Test 3](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal3.png) |
+|     v1.1.0      | 4/66  | [Test 4](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal4.png) |
+
 ## Develop Environment
 
 - Windows 11
@@ -20,17 +28,9 @@ Also, the auto-generated G.P.A score only calculates the courses you've passed.
 
 ## Install
 
-Go to [relase page](https://github.com/belongtothenight/CYCU-Grade-Exporter/releases) and download the latest installer.</br>
-
-Windows defender will try to stop you from executing this program, but no malicious code is contained, and it is safe to use despite Windows might give warnings. The table below is the test result from [VirusTotal](https://www.virustotal.com/gui/home/upload) which shows few alerts, and the source code itself had passed CodeQL scans. Thus it's safe to click 'More Info' and 'run anyway' to install.
-| Release Version | Score |                                                Picture                                                |
-| :-------------: | :---: | :---------------------------------------------------------------------------------------------------: |
-|     v1.0.1      | 5/70  | [Test 1](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal1.png) |
-|     v1.0.1      | 5/70  | [Test 2](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal2.png) |
-|     v1.0.2      | 5/69  | [Test 3](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal3.png) |
-|     v1.1.0      | 4/66  | [Test 4](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal4.png) |
-
-For installation destination, it is recommended to install in folders that don't need administrator permission. Suppose you want to install it in those folders. In that case, you'll need to execute it with administrator permission every time you want to use it.
+1. Go to [relase page](https://github.com/belongtothenight/CYCU-Grade-Exporter/releases) and download the latest installer.
+2. After starting the installer, click 'More Info' and 'run anyway' on Windows Defender Notification Page to start installing.
+3. For installation destination, it is recommended to install in folders that don't need administrator permission. Suppose you want to install it in those folders. In that case, you'll need to execute it with administrator permission every time you want to use it.
 
 ## Steps to Use
 
