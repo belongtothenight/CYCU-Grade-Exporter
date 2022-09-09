@@ -21,7 +21,7 @@ Also, the auto-generated G.P.A score only calculates the courses you've passed.
 Go to [relase page](https://github.com/belongtothenight/CYCU-Grade-Exporter/releases) and download the latest installer.</br>
 
 Windows defender will try to stop you from executing this program, but no malicious code is contained, and it is safe to use despite Windows might give warnings. The table below is the test result from [VirusTotal](https://www.virustotal.com/gui/home/upload) which shows few alerts, and the source code itself had passed CodeQL scans. Thus it's safe to click 'More Info' and 'run anyway' to install.
-| Virus Detection | Score |                                              Picture                                               |
+| Release Version | Score |                                              Picture                                               |
 | :-------------: | :---: | :------------------------------------------------------------------------------------------------: |
 |     v1.0.1      | 5/70  | [Test 1](https://github.com/belongtothenightCYCU-Grade-Exporter/blob/main/picture/virustotal1.png) |
 |     v1.0.1      | 5/70  | [Test 2](https://github.com/belongtothenightCYCU-Grade-Exporter/blob/main/picture/virustotal2.png) |
