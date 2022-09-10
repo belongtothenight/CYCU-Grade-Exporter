@@ -6,3 +6,4 @@ src/CYCU_Grade_Exporter.spec
 .gitignore
 .gitattributes
 .code-workspace
+release/
