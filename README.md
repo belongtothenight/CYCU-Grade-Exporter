@@ -1,6 +1,6 @@
 # CYCU-Grade-Exporter
 
-[![Version](https://img.shields.io/github/v/release/belongtothenight/CYCU-Grade-Exporter)](https://img.shields.io/github/v/release/belongtothenight/CYCU-Grade-Exporter) [![Code Check](https://img.shields.io/github/workflow/status/belongtothenight/CYCU-Grade-Exporter/CodeQL)](https://img.shields.io/github/workflow/status/belongtothenight/CYCU-Grade-Exporter/CodeQL)[![Download](https://img.shields.io/github/downloads/belongtothenight/CYCU-Grade-Exporter/total)](https://img.shields.io/github/downloads/belongtothenight/CYCU-Grade-Exporter/total)
+[![Version](https://img.shields.io/github/v/release/belongtothenight/CYCU-Grade-Exporter)](https://img.shields.io/github/v/release/belongtothenight/CYCU-Grade-Exporter) [![Code Check](https://img.shields.io/github/workflow/status/belongtothenight/CYCU-Grade-Exporter/CodeQL)](https://img.shields.io/github/workflow/status/belongtothenight/CYCU-Grade-Exporter/CodeQL) [![Download](https://img.shields.io/github/downloads/belongtothenight/CYCU-Grade-Exporter/total)](https://img.shields.io/github/downloads/belongtothenight/CYCU-Grade-Exporter/total)
 
 This script takes webpage source code and exports a CSV file containing CYCU students' grade-related data.
 
