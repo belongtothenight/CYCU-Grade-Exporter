@@ -30,7 +30,7 @@ Windows defender will try to stop you from executing this program, but no malici
 
 1. Go to [relase page](https://github.com/belongtothenight/CYCU-Grade-Exporter/releases) and download the latest installer.
 2. After starting the installer, click 'More Info' and 'run anyway' on Windows Defender Notification Page to start installing.
-3. For installation destination, it is recommended to install in folders that don't need administrator permission. Suppose you want to install it in those folders. In that case, you'll need to execute it with administrator permission every time you want to use it.
+3. For installation destination, it is recommended to install in folders that don't need administrator permission. Suppose you want to install it in those folders, you'll need to execute it with administrator permission every time you want to use it.
 
 ## Steps to Use
 
