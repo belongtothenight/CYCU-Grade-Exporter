@@ -44,6 +44,8 @@ Step 2-5 can be skipped if you press 'Auto'. But you might run into bugs.
 6. Click 'Extract'.
 Once the button 'Extract' is clicked and successfully exported the file, a windows file browser window should pop up showing the exported file and open the file with default software. If not, please check if all the code on the webpage is pasted.
 
+![Tutorial Video](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/video/tutorial.mp4)
+
 ## Resource
 
 [中原大學學生學業成績考核辦法](https://tdpba.cycu.edu.tw/wp-content/uploads/%E4%B8%AD%E5%8E%9F%E5%A4%A7%E5%AD%B8%E5%AD%B8%E7%94%9F%E5%AD%B8%E6%A5%AD%E6%88%90%E7%B8%BE%E8%80%83%E6%A0%B8%E8%BE%A6%E6%B3%95.pdf)
