@@ -1,15 +1,16 @@
 # CYCU-Grade-Exporter
 
-[![Version](https://img.shields.io/github/v/release/belongtothenight/CYCU-Grade-Exporter)](https://img.shields.io/github/v/release/belongtothenight/CYCU-Grade-Exporter) [![Code Check](https://img.shields.io/github/workflow/status/belongtothenight/CYCU-Grade-Exporter/CodeQL)](https://img.shields.io/github/workflow/status/belongtothenight/CYCU-Grade-Exporter/CodeQL) [![Download](https://img.shields.io/github/downloads/belongtothenight/CYCU-Grade-Exporter/total)](https://img.shields.io/github/downloads/belongtothenight/CYCU-Grade-Exporter/total)
+[![Version](https://img.shields.io/github/v/release/belongtothenight/CYCU-Grade-Exporter)](https://github.com/belongtothenight/CYCU-Grade-Exporter/releases) [![Code Check](https://img.shields.io/github/workflow/status/belongtothenight/CYCU-Grade-Exporter/CodeQL)](https://github.com/belongtothenight/CYCU-Grade-Exporter/actions) [![Download](https://img.shields.io/github/downloads/belongtothenight/CYCU-Grade-Exporter/total)](https://github.com/belongtothenight/CYCU-Grade-Exporter/releases)
 
-This script takes webpage source code and exports a CSV file containing CYCU students' grade-related data.
+Students from CYCU can use this to get their grade, credit, and course info exported from I-touch student's grade page.
 
 ## ATTENTION
 
-The calculation of G.P.A has not been proven correct yet, so only take it as a proximate number.
-Also, the auto-generated G.P.A score only calculates the courses you've passed.
+1. Previous releases including v1.0.1~v1.1.0 are all deleted since they can't perform the full functionality and some contains major flaw.
+2. The calculation of G.P.A has not been proven correct yet, so only take it as a proximate number.
+3. The auto-generated G.P.A score only calculates the courses you've passed.
+4. Windows defender will try to stop you from executing this program, but no malicious code is contained, and it is safe to use despite Windows might give warnings. The table below is the test result from [VirusTotal](https://www.virustotal.com/gui/home/upload) which shows few alerts, and the source code itself had passed CodeQL scans. Thus it's safe to execute.
 
-Windows defender will try to stop you from executing this program, but no malicious code is contained, and it is safe to use despite Windows might give warnings. The table below is the test result from [VirusTotal](https://www.virustotal.com/gui/home/upload) which shows few alerts, and the source code itself had passed CodeQL scans. Thus it's safe to execute.
 | Release Version | Score |                                                Picture                                                |
 | :-------------: | :---: | :---------------------------------------------------------------------------------------------------: |
 |     v1.0.1      | 5/70  | [Test 1](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal1.png) |
