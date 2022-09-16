@@ -18,6 +18,7 @@ Students from CYCU can use this to get their grade, credit, and course info expo
 |     v1.0.2      | 5/69  | [Test 3](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal3.png) |
 |     v1.1.0      | 4/66  | [Test 4](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal4.png) |
 |     v1.1.1      | 3/70  | [Test 5](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal5.png) |
+|     v2.0.0      | 3/70  | [Test 6](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal6.png) |
 
 ## Develop Environment
 
@@ -31,6 +32,7 @@ Students from CYCU can use this to get their grade, credit, and course info expo
   - bs4
   - selenium
   - pyperclip
+  - requests
 
 ## Install
 
