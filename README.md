@@ -1,6 +1,6 @@
 # CYCU-Grade-Exporter
 
-[![Version](https://img.shields.io/github/v/release/belongtothenight/CYCU-Grade-Exporter)](https://github.com/belongtothenight/CYCU-Grade-Exporter/releases) [![Code Check](https://img.shields.io/github/workflow/status/belongtothenight/CYCU-Grade-Exporter/CodeQL)](https://github.com/belongtothenight/CYCU-Grade-Exporter/actions) [![Download](https://img.shields.io/github/downloads/belongtothenight/CYCU-Grade-Exporter/total)](https://github.com/belongtothenight/CYCU-Grade-Exporter/releases)
+[![Version](https://img.shields.io/github/v/release/belongtothenight/CYCU-Grade-Exporter)](https://github.com/belongtothenight/CYCU-Grade-Exporter/releases/latest) [![Code Check](https://img.shields.io/github/workflow/status/belongtothenight/CYCU-Grade-Exporter/CodeQL)](https://github.com/belongtothenight/CYCU-Grade-Exporter/actions) [![Download](https://img.shields.io/github/downloads/belongtothenight/CYCU-Grade-Exporter/total)](https://github.com/belongtothenight/CYCU-Grade-Exporter/releases)
 
 Students from CYCU can use this to get their grade, credit, and course info exported from I-touch student's grade page.
 
