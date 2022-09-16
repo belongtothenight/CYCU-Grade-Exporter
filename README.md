@@ -11,14 +11,11 @@ Students from CYCU can use this to get their grade, credit, and course info expo
 3. The auto-generated G.P.A score only calculates the courses you've passed.
 4. Windows defender will try to stop you from executing this program, but no malicious code is contained, and it is safe to use despite Windows might give warnings. The table below is the test result from [VirusTotal](https://www.virustotal.com/gui/home/upload) which shows few alerts, and the source code itself had passed [CodeQL scans](https://github.com/belongtothenight/CYCU-Grade-Exporter/actions). Thus it's safe to execute.
 
-| Release Version | Virus Test Score |                                             Virus Test Picture                                              |
-| :-------------: | :--------------: | :---------------------------------------------------------------------------------------------------------: |
-|     v1.0.1      |       5/70       | [Virus Test 1](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal1.png) |
-|     v1.0.1      |       5/70       | [Virus Test 2](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal2.png) |
-|     v1.0.2      |       5/69       | [Virus Test 3](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal3.png) |
-|     v1.1.0      |       4/66       | [Virus Test 4](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal4.png) |
-|     v1.1.1      |       3/70       | [Virus Test 5](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal5.png) |
-|     v2.0.0      |       3/70       | [Virus Test 6](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal6.png) |
+| Release Version | Virus Test Score |                                             Virus Test Picture                                              | Release Version | Virus Test Score | Virus Test Picture                                                                                          |
+| :-------------: | :--------------: | :---------------------------------------------------------------------------------------------------------: | --------------- | ---------------- | ----------------------------------------------------------------------------------------------------------- |
+|     v1.0.1      |       5/70       | [Virus Test 1](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal1.png) | v1.0.1          | 5/70             | [Virus Test 2](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal2.png) |
+|     v1.0.2      |       5/69       | [Virus Test 3](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal3.png) | v1.1.0          | 4/66             | [Virus Test 4](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal4.png) |
+|     v1.1.1      |       3/70       | [Virus Test 5](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal5.png) | v2.0.0          | 3/70             | [Virus Test 6](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal6.png) |
 
 ## Develop Environment
 
