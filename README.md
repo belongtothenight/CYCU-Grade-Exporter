@@ -16,6 +16,7 @@ Windows defender will try to stop you from executing this program, but no malici
 |     v1.0.1      | 5/70  | [Test 2](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal2.png) |
 |     v1.0.2      | 5/69  | [Test 3](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal3.png) |
 |     v1.1.0      | 4/66  | [Test 4](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal4.png) |
+|     v1.1.1      | 3/70  | [Test 5](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/virustest/virustotal5.png) |
 
 ## Develop Environment
 
