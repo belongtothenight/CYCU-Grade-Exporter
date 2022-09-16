@@ -62,5 +62,5 @@ Once the button 'Extract' is clicked and successfully exported the file, a windo
 
 - CYCU_Grade_Exporter.py (exe convertion)
   - source_code_graber.py
-- CYCU_Grade_Exporter_Updater.py (fail try)
+- CYCU_Grade_Exporter_Updater.py (failed attempt)
 - get_cursor_info.py
