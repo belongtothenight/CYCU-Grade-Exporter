@@ -64,27 +64,21 @@ class WP:
         for element in self.doc.find_all('table', ['700', '#000000', '#808080', '#FFFFFF', '9-font', '#000000', '1', 'center']):
             element = list(filter(None, element))
             soup.append(element)
-        # print(soup)
         soup = soup[0:1]
         soup = soup[0]
-        # print(soup)
         soup = list(filter(filter_vowels, soup))
-        # print(soup)
 
         '''title'''
         title = self.str_purify(soup[0])
-        print(title)
+        # print(title)
 
         '''header_row'''
-        # print(soup[1].prettify())
         for element in soup[1].find_all('b'):
             element = self.str_purify(element)
             header_row.append(element)
-        # print(header_row)
 
         '''content_row'''
-        for i in range(2, len(soup)-1):
-            # print(soup[i].prettify() + '\n')
+        for i in range(2, len(soup)):
             for element in soup[i].find_all('td'):
                 element = self.str_purify(element)
                 content_row.append(element)
@@ -126,8 +120,6 @@ class WP:
         doc_grade.append(title)
         doc_grade.append(header_row)
         doc_grade.append(content_row)
-        # print(len(header_row))
-        # print(len(content_row))
         return doc_grade
 
     def print_all(self):
@@ -137,7 +129,6 @@ class WP:
         i = 0
         try:
             for element in list:
-                # print(str(i) + ' ' + str(element))
                 print(str(i) + ' ' + str(element) + '\n')
                 i += 1
         except:
@@ -166,7 +157,6 @@ class WPP(WP):
             if x[0] == semester_buf:
                 if x[7] == '及格':
                     credit_sum += int(x[6])
-                # print(str(x[6]) + ' / ' + str(credit_sum))
             else:
                 semester_buf = x[0]
                 self.semester.append(semester_buf)
@@ -174,7 +164,6 @@ class WPP(WP):
                 credit_sum = 0
                 if x[7] == '及格':
                     credit_sum += int(x[6])
-                # print(str(x[6]) + ' / ' + str(credit_sum))
         self.credit.append(credit_sum)
         self.credit.append(sum(self.credit))
 
@@ -182,8 +171,6 @@ class WPP(WP):
         for x in range(len(self.grade[2])-1, 0, -1):
             if self.grade[2][x][3] in course and self.grade[2][x][7] == '及格':
                 self.credit[-1] -= int(self.grade[2][x][6])
-                # index = self.semester.index(self.grade[2][x][0])
-                # self.credit[index] -= int(self.grade[2][x][6])
             course.append(self.grade[2][x][3])
         '''append grade info'''
         self.grade[1].append('等第')
@@ -262,51 +249,46 @@ class WPP(WP):
             i += 1
         i = 0
         for x in self.grade[2]:
-            # print(str(i) + ' ' + str(x))
             if i in rng:
                 j = rng.index(i)
                 self.gpa[j] = (cross_buf2 / credit_buf2)
-                # print(str(cross_buf2) + ' / ' + str(credit_buf2))
                 cross_buf2 = 0
                 credit_buf2 = 0
-                # print()
             if x[7] != '及格':
                 i += 1
                 continue
             cross_buf2 += int(x[6]) * int(x[-1])
             credit_buf2 += int(x[6])
-            # print(str(x[6]) + ' * ' + str(x[-1]) + ' = ' +
-            #       str(int(x[6])*int(x[-1])) + ' / ' + str(cross_buf2) + ' / ' + str(credit_buf2))
             cross_buf1 += cross_buf2
             credit_buf1 += credit_buf2
             i += 1
         self.gpa.append(cross_buf1 / credit_buf1)
-        # print(rng)
         '''export'''
         self.grade[0].append('Total')
         self.semester.append('Total')
         self.identity = list(filter(None, self.identity))
         export_data_a = []
-        export_data_b = []
         i = 0
         buf = []
-        for x in range(0, len(self.semester[1])):
+        export_data_a.append(self.identity)
+        export_data_a.append([''])
+        for x in range(0, len(self.exemption[1])):
             buf.append(
                 self.exemption[2][i:i+len(self.exemption[1])])
             i += len(self.exemption[1])
-        export_data_a.append(self.identity)
         export_data_a.append([self.exemption[0]])
         export_data_a.append(self.exemption[1])
         for x in buf:
             export_data_a.append(x)
+        export_data_a.append([''])
         export_data_a.append(self.grade[1])
         for x in self.grade[2]:
             export_data_a.append(x)
+        export_data_a.append([''])
         export_data_a.append(self.grade[0])
         export_data_a.append(self.semester)
         export_data_a.append(self.credit)
         export_data_a.append(self.gpa)
-        # print(export_data_a)
         if self.output_mode == 1:
             # export csv
             print('exporting csv...')
