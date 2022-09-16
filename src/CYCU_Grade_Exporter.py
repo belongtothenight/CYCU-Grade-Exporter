@@ -64,12 +64,16 @@ class WP:
         for element in self.doc.find_all('table', ['700', '#000000', '#808080', '#FFFFFF', '9-font', '#000000', '1', 'center']):
             element = list(filter(None, element))
             soup.append(element)
+        # print(soup)
+        soup = soup[0:1]
         soup = soup[0]
+        # print(soup)
         soup = list(filter(filter_vowels, soup))
+        # print(soup)
 
         '''title'''
         title = self.str_purify(soup[0])
-        # print(title)
+        print(title)
 
         '''header_row'''
         # print(soup[1].prettify())
@@ -408,8 +412,8 @@ class Window(tk.Tk, WPP):
         graber.title('CYCU Grade Exporter')
         graber.configure()
         graber.resizable(False, False)
-        username = tk.StringVar(value='10828241')
-        password = tk.StringVar(value='SFER$ljoi9')
+        username = tk.StringVar(value='')
+        password = tk.StringVar(value='')
         label1 = tk.Label(graber, text='Username', font=(
             'Consolas', 12))
         label1.grid(column=0, row=0)
