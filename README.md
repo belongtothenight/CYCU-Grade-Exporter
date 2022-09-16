@@ -31,6 +31,7 @@ Students from CYCU can use this to get their grade, credit, and course info expo
   - numpy
   - bs4
   - selenium
+  - pyautogui
   - pyperclip
   - requests
 
