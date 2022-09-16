@@ -22,6 +22,10 @@ Students from CYCU can use this to get their grade, credit, and course info expo
 ## Develop Environment
 
 - Windows 11
+- Chrome (same as installed Chrome version)
+  - chromedriver 104.0.5112.**
+  - chromedriver 105.0.5195.**
+  - chromedriver 106.0.5249.**
 - python
   - numpy
   - bs4
@@ -30,7 +34,7 @@ Students from CYCU can use this to get their grade, credit, and course info expo
 
 ## Install
 
-1. Go to [relase page](https://github.com/belongtothenight/CYCU-Grade-Exporter/releases) and download the latest installer.
+1. Go to [relase page](https://github.com/belongtothenight/CYCU-Grade-Exporter/releases/latest) and download the latest installer.
 2. After starting the installer, click 'More Info' and 'run anyway' on Windows Defender Notification Page to start installing.
 3. For installation destination, it is recommended to install in folders that don't need administrator permission. Suppose you want to install it in those folders, you'll need to execute it with administrator permission every time you want to use it.
 
@@ -51,3 +55,10 @@ Once the button 'Extract' is clicked and successfully exported the file, a windo
 ## Resource
 
 [中原大學學生學業成績考核辦法](https://tdpba.cycu.edu.tw/wp-content/uploads/%E4%B8%AD%E5%8E%9F%E5%A4%A7%E5%AD%B8%E5%AD%B8%E7%94%9F%E5%AD%B8%E6%A5%AD%E6%88%90%E7%B8%BE%E8%80%83%E6%A0%B8%E8%BE%A6%E6%B3%95.pdf)
+
+## Code Structure
+
+- CYCU_Grade_Exporter.py (exe convertion)
+  - source_code_graber.py
+- CYCU_Grade_Exporter_Updater.py (fail try)
+- get_cursor_info.py

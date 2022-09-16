@@ -7,12 +7,50 @@ from webbrowser import open as open_url
 import numpy as np
 import tkinter as tk
 from tkinter import ttk
+from requests import get
+import ctypes
 from source_code_graber import auto_get_source_code
 
-sizex = 960
-sizey = 540
-size = str(sizex) + 'x' + str(sizey)
+system('cls')
+'''software information'''
+# get latest release version
+sf_version = 'v2.0.0'
+github_repo_release_url = 'https://github.com/belongtothenight/CYCU-Grade-Exporter/releases/'
+github_repo_latest_release_url = 'https://github.com/belongtothenight/CYCU-Grade-Exporter/releases/latest/'
+i_touch_link = 'https://itouch.cycu.edu.tw/home/#/ann'
+response = get(github_repo_latest_release_url)
+html = response.text
+html = BeautifulSoup(html, 'html.parser').find_all('meta')
+text = []
+for x in html:
+    text.append(x.get('content'))
+i = 0
+# for x in text:
+#     print(str(i) + ' ' + str(x))
+#     i += 1
+latest_sf_version = text[20].split('/')[-1]  # get from release page
+# print(latest_sf_version)
+# print(text[24])
+if ('Update necessity: True' or 'Update necessity: true') in text[24]:
+    update_necessity = True
+elif ('Update necessity: False' or 'Update necessity: false') in text[24]:
+    update_necessity = False
+else:
+    update_necessity = False
+
+'''window variable'''
+user32 = ctypes.windll.user32
+max_width = int(user32.GetSystemMetrics(0))
+max_height = int(user32.GetSystemMetrics(1))
+sizex = max_width // 2
+sizey = max_height // 2
+size_updater = str(sizex//3) + 'x' + str(sizey//3) + \
+    '+' + str(sizex-sizex//3//2) + '+' + str(sizey-sizey//3//2)
+size = str(sizex) + 'x' + str(sizey) + '+' + \
+    str(sizex-sizex//2) + '+' + str(sizey-sizey//2)
 color = '#002EA4'
+updater_text = ['\t\t\t\t\t\n', 'New version available. Please update.\n',
+                'Update necessity: {0}\n'.format(update_necessity)]
 description_text = [
     'ATTENSION: ',
     'This program is only for the students of Chung Yuan Christian University to extract grades from I-touch. \n\
@@ -26,7 +64,82 @@ If you use this program to extract grades from other websites or grades of other
 5. Paste the codes using \'ctrl+v\' into the text box and select exporting format. \n\
 6. Click \'Extract\'.',
 ]
-i_touch_link = 'https://itouch.cycu.edu.tw/home/#/ann'
+
+
+def version_check():
+    def release_fun():
+        open_url(github_repo_release_url)
+        exit()
+
+    def latest_release_fun():
+        open_url(github_repo_latest_release_url)
+        exit()
+    version_path = join(getcwd(), 'version.txt')
+    # print(version_path)
+    if exists(version_path):
+        with open(version_path, 'r') as f:
+            version = f.read()
+        print(version)
+        if version != latest_sf_version:
+            print('version not match')
+            updater = tk.Tk()
+            updater.title('CYCU Grade Exporter Updater')
+            updater.configure()
+            updater.geometry(size_updater)
+            updater.resizable(False, False)
+            update_message = tk.Label(
+                updater, text="\n".join(
+                    updater_text), justify='center', wraplength=sizex*0.4)
+            update_message.pack(side='top', fill='x')
+            '''if update_necessity == True:
+                updater_path = join(getcwd(), 'updater.exe')
+                if exists(updater_path):
+                    startfile(updater_path)
+                    progress = tk.Label(
+                        updater, text='updating...', justify='center')
+                    progress.pack()
+                    updater.after(1500, lambda: updater.destroy())
+                    updater.focus_force()
+                    updater.mainloop()
+                    exit()
+                else:
+                    progress = tk.Label(
+                        updater, text='Updater not found, please reinstall.', justify='center')
+                    progress.pack()
+                    release = tk.Button(
+                        updater, text='Release', command=release_fun)
+                    latest_release = tk.Button(
+                        updater, text='Latest Release', command=latest_release_fun)
+                    latest_release.pack(side='left', expand=True)
+                    release.pack(side='left', expand=True)
+                    updater.focus_force()
+                    updater.mainloop()
+
+            else:
+                release = tk.Button(
+                    updater, text='Release', command=release_fun)
+                latest_release = tk.Button(
+                    updater, text='Latest Release', command=latest_release_fun)
+                latest_release.pack(side='left', expand=True)
+                release.pack(side='left', expand=True)
+                updater.focus_force()
+                updater.mainloop()'''
+            version_text = 'Current version: {0}\nLatest version: {1}'.format(
+                sf_version, latest_sf_version)
+            version = tk.Label(updater, text=version_text, justify='center')
+            version.pack()
+            release = tk.Button(
+                updater, text='Release', command=release_fun)
+            latest_release = tk.Button(
+                updater, text='Latest Release', command=latest_release_fun)
+            release.pack(side='left', expand=True)
+            latest_release.pack(side='left', expand=True)
+            updater.focus_force()
+            updater.mainloop()
+
+    else:
+        with open(version_path, 'w') as f:
+            f.write(sf_version)
 
 
 class WP:
@@ -445,5 +558,5 @@ class Window(tk.Tk, WPP):
 
 
 if __name__ == '__main__':
-    system('cls')
+    version_check()
     main_window = Window(size, sizex, sizey, color)
