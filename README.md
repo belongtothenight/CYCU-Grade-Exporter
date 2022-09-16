@@ -63,4 +63,4 @@ Once the button 'Extract' is clicked and successfully exported the file, a windo
 - [CYCU_Grade_Exporter.py](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/src/CYCU_Grade_Exporter.py) (exe convertion)
   - [source_code_graber.py](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/src/source_code_graber.py)
 - [CYCU_Grade_Exporter_Updater.py](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/src/CYCU_Grade_Exporter_Updater.py) (failed attempt/not deployed)
-- [get_cursor_info.py](not deployed)
+- [get_cursor_info.py](https://github.com/belongtothenight/CYCU-Grade-Exporter/blob/main/src/get_cursor_info.py) (not deployed)
