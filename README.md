@@ -4,7 +4,7 @@
 
 Students from CYCU can use this to get their grade, credit, and course info exported from I-touch student's grade page.
 
-## ATTENTION
+## !!ATTENTION!! This repo is archived, and will no longer be updated
 
 1. Previous releases including v1.0.1~v1.1.0 are all deleted since they can't perform the full functionality and some contains major flaw.
 2. The calculation of G.P.A has not been proven correct yet, so only take it as a proximate number.
